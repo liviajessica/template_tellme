@@ -1,0 +1,44 @@
+<ion-content padding class="background">
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-card color="light">
+    <ion-card-header>
+      <ion-card-title text-center>Log In</ion-card-title>
+    </ion-card-header>
+      
+    <ion-card-content>
+      <form #f="ngForm" (ngSubmit)="onLogin(f)">
+        <ion-list>
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input
+              required
+              ngModel
+              name="email"
+              type="email"
+              placeholder="Your email here"
+            ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input
+              required
+              ngModel
+              name="pwd"
+              type="password"
+              minlength='6'
+              placeholder="******"
+            ></ion-input>
+          </ion-item>
+          <br>
+          <section text-center>
+            <ion-button size="medium" [disabled]="!f.valid" type="submit" color="primary">Login</ion-button>
+            <ion-button fill="outline" size="medium" color="secondary" (click)="onViewRegister()">Signup</ion-button>
+          </section>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
