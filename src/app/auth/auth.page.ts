@@ -1,3 +1,4 @@
+import { ForgotPasswordPage } from './forgot-password/forgot-password.page';
 import { UserService } from '../user.service';
 import { SignupPage } from './signup/signup.page';
 import { Component, OnInit } from '@angular/core';
@@ -5,6 +6,7 @@ import { ModalController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-auth',
@@ -50,6 +52,13 @@ export class AuthPage implements OnInit {
   async onViewRegister() {
     const modal = await this.modalCtrl.create({
       component: SignupPage
+    });
+    return await modal.present();
+  }
+
+  async forgotPass(){
+    const modal = await this.modalCtrl.create({
+      component: ForgotPasswordPage
     });
     return await modal.present();
   }
